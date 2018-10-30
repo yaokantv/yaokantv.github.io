@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>SDK流程详解 | Yaokantv</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/zh-cn/docs_ios/detailed.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en-us" href="https://hexo.io/en-us/docs_ios/detailed.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://hexo.io/zh-cn/docs_ios/detailed.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 3.8.0">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Yaokantv">
+  <!-- Open Graph -->
+  <meta name="description" content="1. SDK初始化1.1 申请 AppId开发者需要先向我公司为自己的App申请一个AppID，SDK启动时需要指定应用程序的AppID。 1.2 引用头文件#import &amp;lt;YKCenterSDK/YKCenterSDK.h&amp;gt; 1.3 初始化SDK请在应用的AppDelegate中调用该方法指定应用的AppID，该方法只需要调用一次。 注意：只有在初始化完成之后，App才能完成后续的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SDK流程详解">
+<meta property="og:url" content="https://hexo.io/zh-cn/docs_ios/detailed.html">
+<meta property="og:site_name" content="Yaokantv">
+<meta property="og:description" content="1. SDK初始化1.1 申请 AppId开发者需要先向我公司为自己的App申请一个AppID，SDK启动时需要指定应用程序的AppID。 1.2 引用头文件#import &amp;lt;YKCenterSDK/YKCenterSDK.h&amp;gt; 1.3 初始化SDK请在应用的AppDelegate中调用该方法指定应用的AppID，该方法只需要调用一次。 注意：只有在初始化完成之后，App才能完成后续的">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-10-29T06:00:26.158Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SDK流程详解">
+<meta name="twitter:description" content="1. SDK初始化1.1 申请 AppId开发者需要先向我公司为自己的App申请一个AppID，SDK启动时需要指定应用程序的AppID。 1.2 引用头文件#import &amp;lt;YKCenterSDK/YKCenterSDK.h&amp;gt; 1.3 初始化SDK请在应用的AppDelegate中调用该方法指定应用的AppID，该方法只需要调用一次。 注意：只有在初始化完成之后，App才能完成后续的">
+<meta name="twitter:site" content="hexojs">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48498357-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6482217598104186",
+          enable_page_level_ads: true
+     });
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs_ios/" class="main-nav-link">iOS-SDK</a><a href="/zh-cn/docs_android/" class="main-nav-link">安卓-SDK</a>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en-us">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">SDK流程详解</h1>
+                <a href="https://github.com/yaokantv/yk_wiki/edit/master/source/zh-cn/docs_ios/detailed.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="1-SDK初始化" class="article-heading"><a href="#1-SDK初始化" class="headerlink" title="1. SDK初始化"></a>1. SDK初始化<a class="article-anchor" href="#1-SDK初始化" aria-hidden="true"></a></h1><h2 id="1-1-申请-AppId" class="article-heading"><a href="#1-1-申请-AppId" class="headerlink" title="1.1 申请 AppId"></a>1.1 申请 AppId<a class="article-anchor" href="#1-1-申请-AppId" aria-hidden="true"></a></h2><p>开发者需要先向我公司为自己的App申请一个AppID，SDK启动时需要指定应用程序的AppID。</p>
+<h2 id="1-2-引用头文件" class="article-heading"><a href="#1-2-引用头文件" class="headerlink" title="1.2 引用头文件"></a>1.2 引用头文件<a class="article-anchor" href="#1-2-引用头文件" aria-hidden="true"></a></h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#import &lt;YKCenterSDK/YKCenterSDK.h&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-初始化SDK" class="article-heading"><a href="#1-3-初始化SDK" class="headerlink" title="1.3 初始化SDK"></a>1.3 初始化SDK<a class="article-anchor" href="#1-3-初始化SDK" aria-hidden="true"></a></h2><p>请在应用的AppDelegate中调用该方法指定应用的AppID，该方法只需要调用一次。</p>
+<p>注意：只有在初始化完成之后，App才能完成后续的操作。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK registApp:YK_APP_ID completion:^(<span class="built_in">NSError</span> * _Nonnull error) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"YKCenterSDK 初始化成功：%@"</span>, error);</span><br><span class="line">&#125;];</span><br><span class="line">[YKCenterSDK disableSDKLog:<span class="literal">NO</span>];</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-用户管理" class="article-heading"><a href="#2-用户管理" class="headerlink" title="2. 用户管理"></a>2. 用户管理<a class="article-anchor" href="#2-用户管理" aria-hidden="true"></a></h1><p>用户系统包含了用户的注册、登录、重置密码等功能，以APPID区分用户系统，不同APPID的用户系统相互独立。更换APPID后，需要重新注册用户。</p>
+<h2 id="2-1-用户注册" class="article-heading"><a href="#2-1-用户注册" class="headerlink" title="2.1.    用户注册"></a>2.1.    用户注册<a class="article-anchor" href="#2-1-用户注册" aria-hidden="true"></a></h2><p>SDK提供三种用户注册方式：手机注册、普通用户注册、邮箱注册。</p>
+<h3 id="2-1-1-手机注册" class="article-heading"><a href="#2-1-1-手机注册" class="headerlink" title="2.1.1 手机注册"></a>2.1.1 手机注册<a class="article-anchor" href="#2-1-1-手机注册" aria-hidden="true"></a></h3><p>通过手机注册账号，需要一个有效的手机号。注册时需要两步操作：获取短信验证码、用短信验证码注册用户。</p>
+<p>第一步：APP获取短信验证码时，SDK向云端发送短信验证码请求，如果请求成功，云端会给手机发送短信验证码。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 发送手机验证码</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">[YKCenterSDK sendPhoneSMSCode:<span class="keyword">self</span>.textCell.textInput.text</span><br><span class="line">                           completion:^(<span class="built_in">NSError</span> * _Nonnull result, <span class="built_in">NSString</span> * _Nonnull token) &#123;</span><br><span class="line">    <span class="comment">// 结果回调处理</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
+<p>第二步：用短信验证码注册时，APP把手机收到的短信验证码传给SDK，填上手机号和密码就可以注册了。<br>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)reg:(<span class="built_in">NSString</span> *)username <span class="comment">// 手机号码</span></span><br><span class="line">   password:(<span class="built_in">NSString</span> *)password <span class="comment">// 密码</span></span><br><span class="line"> verifyCode:(<span class="built_in">NSString</span> *)code     <span class="comment">// 第一步获取到的验证码</span></span><br><span class="line">accountType:(YKUserAccountType)accountType <span class="comment">// 值为 YKUserAccountTypePhone</span></span><br><span class="line">    handler:(<span class="keyword">void</span> (^__<span class="keyword">nullable</span>)(<span class="built_in">NSError</span> *result, <span class="built_in">NSString</span> *uid, <span class="built_in">NSString</span> *token))completion;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-1-2-普通注册" class="article-heading"><a href="#2-1-2-普通注册" class="headerlink" title="2.1.2 普通注册"></a>2.1.2 普通注册<a class="article-anchor" href="#2-1-2-普通注册" aria-hidden="true"></a></h3><p>注册普通用户，使用用户名、密码即可创建一个账号。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)reg:(<span class="built_in">NSString</span> *)username</span><br><span class="line">   password:(<span class="built_in">NSString</span> *)password</span><br><span class="line">    handler:(<span class="keyword">void</span> (^__<span class="keyword">nullable</span>)(<span class="built_in">NSError</span> *result, <span class="built_in">NSString</span> *uid, <span class="built_in">NSString</span> *token))completion;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-1-3-邮箱注册" class="article-heading"><a href="#2-1-3-邮箱注册" class="headerlink" title="2.1.3 邮箱注册"></a>2.1.3 邮箱注册<a class="article-anchor" href="#2-1-3-邮箱注册" aria-hidden="true"></a></h3><p>通过有效的电子邮箱地址，注册一个账号。注册成功后，云端会给指定邮箱发送注册成功的邮件。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)reg:(<span class="built_in">NSString</span> *)username <span class="comment">// 邮箱地址</span></span><br><span class="line">   password:(<span class="built_in">NSString</span> *)password <span class="comment">// 密码</span></span><br><span class="line"> verifyCode:(<span class="built_in">NSString</span> *)code     <span class="comment">// 为空</span></span><br><span class="line">accountType:(YKUserAccountType)accountType <span class="comment">// 值为 YKUserAccountTypeEmail</span></span><br><span class="line">    handler:(<span class="keyword">void</span> (^__<span class="keyword">nullable</span>)(<span class="built_in">NSError</span> *result, <span class="built_in">NSString</span> *uid, <span class="built_in">NSString</span> *token))completion;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-2-用户登录" class="article-heading"><a href="#2-2-用户登录" class="headerlink" title="2.2 用户登录"></a>2.2 用户登录<a class="article-anchor" href="#2-2-用户登录" aria-hidden="true"></a></h2><p>SDK 提供三种登录方式：普通用户登录、手机/邮箱（手机邮箱用同一种登录方式）登录、匿名登录。</p>
+<h3 id="2-2-1-普通用户登录" class="article-heading"><a href="#2-2-1-普通用户登录" class="headerlink" title="2.2.1 普通用户登录"></a>2.2.1 普通用户登录<a class="article-anchor" href="#2-2-1-普通用户登录" aria-hidden="true"></a></h3><p>通过普通注册成功的用户，可以通过普通用户登录来登录我们SDK。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[[YKCenterSDK sharedInstance] login:username</span><br><span class="line">                                   password:password</span><br><span class="line">                                    handler:^(<span class="built_in">NSError</span> * _Nonnull result, <span class="built_in">NSString</span> * _Nonnull uid, <span class="built_in">NSString</span> * _Nonnull token)</span><br><span class="line">         &#123;</span><br><span class="line">    <span class="comment">// 结果回调处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-2-手机-邮箱登录" class="article-heading"><a href="#2-2-2-手机-邮箱登录" class="headerlink" title="2.2.2 手机/邮箱登录"></a>2.2.2 手机/邮箱登录<a class="article-anchor" href="#2-2-2-手机-邮箱登录" aria-hidden="true"></a></h3><p>通过手机/邮箱注册成功的用户，可以通过手机/邮箱登录来登录我们SDK。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[[YKCenterSDK sharedInstance] login:username</span><br><span class="line">                                   password:password</span><br><span class="line">         accountType:(YKUserAccountTypePhone)</span><br><span class="line">                                    handler:^(<span class="built_in">NSError</span> * _Nonnull result, <span class="built_in">NSString</span> * _Nonnull uid, <span class="built_in">NSString</span> * _Nonnull token)</span><br><span class="line">         &#123;</span><br><span class="line">    <span class="comment">// 结果回调处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-3-匿名登录" class="article-heading"><a href="#2-2-3-匿名登录" class="headerlink" title="2.2.3 匿名登录"></a>2.2.3 匿名登录<a class="article-anchor" href="#2-2-3-匿名登录" aria-hidden="true"></a></h3><p>用户每次匿名登录时，获取到的uid是相同的。SDK使用设备UUID生成登录账号。每台设备系统都有一个独立的UUID，系统刷机或重置后将改变。因此匿名登录的用户信息有可能因无法保留而丢失。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[[YKCenterSDK sharedInstance] anonymousLogin:^(<span class="built_in">NSError</span> * _Nonnull result, <span class="built_in">NSString</span> * _Nonnull uid, <span class="built_in">NSString</span> * _Nonnull token) &#123;</span><br><span class="line">    <span class="comment">// 结果回调处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-3-重置密码" class="article-heading"><a href="#2-3-重置密码" class="headerlink" title="2.3 重置密码"></a>2.3 重置密码<a class="article-anchor" href="#2-3-重置密码" aria-hidden="true"></a></h2><p>如果忘记了用户密码，可以通过手机验证码或邮箱设置新的密码。SDK支持手机号重置密码和邮箱重置密码两种，手机号重置需要接收验证码，邮箱重置需要进⼊邮箱，根据链接提示进行重置。（注意：暂时不支持普通用户重置密码！）</p>
+<h3 id="2-3-1-手机号重置密码" class="article-heading"><a href="#2-3-1-手机号重置密码" class="headerlink" title="2.3.1 手机号重置密码"></a>2.3.1 手机号重置密码<a class="article-anchor" href="#2-3-1-手机号重置密码" aria-hidden="true"></a></h3><p>手机号重置密码时，需要先获取短信验证码再重置。获取短信验证码方式与手机注册时相同。</p>
+<p>第一步：获取短信验证码（与注册时相同，这里不再赘述）</p>
+<p>第二步：用短信验证码重置密码</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK resetPassword:<span class="keyword">self</span>.phoneCell.textInput.text</span><br><span class="line">                    verifyCode:<span class="keyword">self</span>.verfiyCell.textInput.text</span><br><span class="line">                   newPassword:<span class="keyword">self</span>.passwordCell.textPassword.text</span><br><span class="line">                   accountType:YKUserAccountTypePhone</span><br><span class="line">                    completion:^(<span class="built_in">NSError</span> * _Nullable result)</span><br><span class="line">     &#123;</span><br><span class="line">    <span class="comment">// 结果回调处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-3-2-邮箱重置密码" class="article-heading"><a href="#2-3-2-邮箱重置密码" class="headerlink" title="2.3.2 邮箱重置密码"></a>2.3.2 邮箱重置密码<a class="article-anchor" href="#2-3-2-邮箱重置密码" aria-hidden="true"></a></h3><p>邮箱重置密码时，云端会给指定邮箱发送安全链接。用户需要到邮箱中查收邮件，并按邮件指示执行重置操作。重置密码邮件有可能进入用户的邮箱的垃圾箱中，需提醒用户。</p>
+<p>邮件发送成功回调与密码修改成功回调一致，因此需要注意在回调的时候区分。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK resetPassword:<span class="keyword">self</span>.phoneCell.textInput.text</span><br><span class="line">                    verifyCode:<span class="literal">nil</span></span><br><span class="line">                   newPassword:<span class="keyword">self</span>.passwordCell.textPassword.text</span><br><span class="line">                   accountType:YKUserAccountTypeEmail</span><br><span class="line">                    completion:^(<span class="built_in">NSError</span> * _Nullable result)</span><br><span class="line">     &#123;</span><br><span class="line">    <span class="comment">// 结果回调处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-遥控中心设备管理" class="article-heading"><a href="#3-遥控中心设备管理" class="headerlink" title="3. 遥控中心设备管理"></a>3. 遥控中心设备管理<a class="article-anchor" href="#3-遥控中心设备管理" aria-hidden="true"></a></h1><p>控制设备前，需要先让设备连到路由器上。配置遥控中心入网时，路由器必须接入外网，设备会自动注册到SDK。</p>
+<p>在开始配置前，设备要先进入配置模式，然后APP调用配置接口发送要配置的路由器ssid和密码。设备配置成功后，SDK给APP返回已配置成功的设备mac地址和产品类型标识，便于APP做下一步的操作。如果设备是重置后进入的配置模式，如果配置成功时设备还来不及从云端获取到DID，则APP得到的DID为空。</p>
+<p>SDK的设备配置接口如果超时时间还未结束，无法进行下一次配置。此外，因为设备配置成功的广播包只有APP连到同一路由上才能收取，因此这个超时时间应该预留出APP连接路由器的时间。</p>
+<p>需要注意的是，如果配置上线的设备不是APP要获取的产品类型，该设备就不会出现在设备列表中。</p>
+<p>配置使⽤UDP广播方式，由手机端发出含有目标路由器名称和密码的广播，设备上的Wifi模块接收到广播包后自动连接目标路由器，连上路由器后发出配置成功广播，通知手机配置已完成。</p>
+<p>注意：目前仅支持 <strong>非 5G 无线路由器</strong> 配置。</p>
+<p>【示例代码】<br><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK bindYKCWithSSID:dataCommon.ssid</span><br><span class="line">                            password:key</span><br><span class="line">                          completion:^(<span class="built_in">NSError</span> * _Nonnull result)</span><br><span class="line">         &#123;</span><br><span class="line">    <span class="comment">// 结果回调处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-1-遥控中心设备发现" class="article-heading"><a href="#3-1-遥控中心设备发现" class="headerlink" title="3.1 遥控中心设备发现"></a>3.1 遥控中心设备发现<a class="article-anchor" href="#3-1-遥控中心设备发现" aria-hidden="true"></a></h2><p>APP设置好委托，启动SDK后，就可以收到SDK的设备列表推送。每次局域网设备或者用户绑定设备发生变化时，SDK都会主动上报最新的设备列表。设备断电再上电、有新设备上线等都会触发设备列表发生变化。用户登录后，SDK会主动把用户已绑定的设备列表上报给APP，绑定设备在不同的手机上登录帐号都可获取到。</p>
+<p>如果APP想要刷新绑定设备列表，可以调用绑定设备列表接口，同时可以指定自己关心的产品类型标识，SDK会把筛选后的设备列表返回给APP。</p>
+<p>SDK提供设备列表缓存，设备列表中的设备对象在整个APP生命周期中一直有效。缓存的设备列表会与当前最新的已发现设备同步更新。</p>
+<p>【示例代码】</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK fetchBoundYKC:^(<span class="built_in">NSArray</span>&lt;GizWifiDevice *&gt; * _Nonnull devices, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-订阅和绑定" class="article-heading"><a href="#3-2-订阅和绑定" class="headerlink" title="3.2 订阅和绑定"></a>3.2 订阅和绑定<a class="article-anchor" href="#3-2-订阅和绑定" aria-hidden="true"></a></h2><p>APP得到设备列表后，给设备设置委托后，可以订阅设备。已订阅的设备将被自动绑定和自动登录，设备登录成功后会主动上报最新状态。</p>
+<p>自动绑定仅限于局域网设备。对于无法在局域网内发现的设备，APP可以通过手动绑定的方式完成绑定。绑定成功的设备，需要订阅后才能使用。</p>
+<p>无论是手动绑定还是自动绑定，设备的remark和alias信息，都需要在设备绑定成功后再设置。</p>
+<p>解除订阅的设备，连接会被断开，不能再继续下发控制指令了。</p>
+<h3 id="3-2-1-订阅" class="article-heading"><a href="#3-2-1-订阅" class="headerlink" title="3.2.1 订阅"></a>3.2.1 订阅<a class="article-anchor" href="#3-2-1-订阅" aria-hidden="true"></a></h3><p>所有通过SDK得到的设备，都可以订阅，订阅结果通过回调返回。订阅成功的设备，要在其网络状态变为可控时才能查询状态和下发控制指令。</p>
+<p>【示例代码】</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK subscribeDevice:dev completion:^(GizWifiDevice * _Nonnull device) &#123;</span><br><span class="line">        <span class="comment">// 直接订阅会自动绑定</span></span><br><span class="line">        <span class="keyword">if</span> (device.isSubscribed) &#123;</span><br><span class="line">            [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];</span><br><span class="line">            [weakSelf performSegueWithIdentifier:<span class="string">@"YKRemoteList"</span> sender:<span class="literal">nil</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
+<h1 id="3-2-2-绑定" class="article-heading"><a href="#3-2-2-绑定" class="headerlink" title="3.2.2 绑定"></a>3.2.2 绑定<a class="article-anchor" href="#3-2-2-绑定" aria-hidden="true"></a></h1><p>APP可以通过手动绑定的方式完成绑定。绑定成功的设备，需要订阅后才能使用。</p>
+<p>【示例代码】</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK bindDevice:dev completion:^(<span class="built_in">NSString</span> * _Nonnull did) &#123;</span><br><span class="line">    <span class="comment">// 绑定</span></span><br><span class="line">    <span class="keyword">if</span> (did) &#123;</span><br><span class="line">        [YKCenterSDK subscribeDevice:dev completion:^(GizWifiDevice * _Nonnull device) &#123;</span><br><span class="line">            <span class="comment">// 订阅</span></span><br><span class="line">            <span class="keyword">if</span> (device.isSubscribed) &#123;</span><br><span class="line">                [[YKCenterCommon sharedInstance] setCurrentYKCId:dev.macAddress];</span><br><span class="line">                [weakSelf performSegueWithIdentifier:<span class="string">@"YKRemoteList"</span> sender:<span class="literal">nil</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-解绑" class="article-heading"><a href="#3-3-解绑" class="headerlink" title="3.3 解绑"></a>3.3 解绑<a class="article-anchor" href="#3-3-解绑" aria-hidden="true"></a></h2><p>已绑定的设备可以解绑，解绑需要APP调用接口完成操作，SDK不支持自动解绑。对于已订阅的设备，解绑成功时会被解除订阅，同时断开设备连接，设备状态也不会再主动上报了。设备解绑后，APP刷新绑定设备列表时就得不到该设备了。</p>
+<p>【示例代码】</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK unbindYKC:dev completion:^(<span class="built_in">NSError</span> * _Nonnull error) &#123;</span><br><span class="line">    <span class="comment">// 结果回调处理</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h1 id="4-遥控器管理" class="article-heading"><a href="#4-遥控器管理" class="headerlink" title="4. 遥控器管理"></a>4. 遥控器管理<a class="article-anchor" href="#4-遥控器管理" aria-hidden="true"></a></h1><p>遥控器创建流程：</p>
+<p>选择遥控器类型-&gt;选择品牌-&gt;获取匹配数据进行遥控匹配-&gt;创建遥控器</p>
+<h2 id="4-1-获取遥控器类型" class="article-heading"><a href="#4-1-获取遥控器类型" class="headerlink" title="4.1 获取遥控器类型"></a>4.1 获取遥控器类型<a class="article-anchor" href="#4-1-获取遥控器类型" aria-hidden="true"></a></h2><p>获取所有遥控器类型，比如电视机，空调，机顶盒，电风扇等。</p>
+<p>【示例代码】</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">__<span class="keyword">weak</span> __<span class="keyword">typeof</span>(<span class="keyword">self</span>)weakSelf = <span class="keyword">self</span>;</span><br><span class="line">[YKCenterSDK fetchRemoteDeviceTypeWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]</span><br><span class="line">                                 completion:^(<span class="built_in">NSArray</span>&lt;YKRemoteDeviceType *&gt; * _Nonnull types,</span><br><span class="line">                                              <span class="built_in">NSError</span> * _Nonnull error)</span><br><span class="line"> &#123;</span><br><span class="line">     __<span class="keyword">strong</span> __<span class="keyword">typeof</span>(weakSelf)strongSelf = weakSelf;</span><br><span class="line">     strongSelf.typeList = types;</span><br><span class="line">     [strongSelf.tableView reloadData];</span><br><span class="line"> &#125;];</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-获取品牌" class="article-heading"><a href="#4-2-获取品牌" class="headerlink" title="4.2 获取品牌"></a>4.2 获取品牌<a class="article-anchor" href="#4-2-获取品牌" aria-hidden="true"></a></h2><p>根据遥控器类型ID去获取该分类下的遥控器品牌列表。</p>
+<p>【示例代码】</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">__<span class="keyword">weak</span> __<span class="keyword">typeof</span>(<span class="keyword">self</span>)weakSelf = <span class="keyword">self</span>;</span><br><span class="line">[YKCenterSDK fetchRemoteDeviceBrandWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]</span><br><span class="line">                          remoteDeviceTypeId:<span class="keyword">self</span>.deviceType.tid.integerValue</span><br><span class="line">                                 completion:^(<span class="built_in">NSArray</span>&lt;YKRemoteDeviceBrand *&gt; * _Nonnull brands,</span><br><span class="line">                                              <span class="built_in">NSError</span> * _Nonnull error)</span><br><span class="line">&#123;</span><br><span class="line">     __<span class="keyword">strong</span> __<span class="keyword">typeof</span>(weakSelf)strongSelf = weakSelf;</span><br><span class="line">     strongSelf.brandList = brands;</span><br><span class="line">     [strongSelf.tableView reloadData];</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-获取匹配数据" class="article-heading"><a href="#4-3-获取匹配数据" class="headerlink" title="4.3 获取匹配数据"></a>4.3 获取匹配数据<a class="article-anchor" href="#4-3-获取匹配数据" aria-hidden="true"></a></h2><p>匹配数据是由服务端定义好的遥控器按键，方便进行快速测试匹配。</p>
+<p>【示例代码】<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK fetchMatchRemoteDeviceWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]</span><br><span class="line">                          remoteDeviceTypeId:<span class="keyword">self</span>.deviceType.tid.integerValue</span><br><span class="line">                         remoteDeviceBrandId:<span class="keyword">self</span>.deviceBrand.bid</span><br><span class="line">                                  completion:^(<span class="built_in">NSArray</span>&lt;YKRemoteMatchDevice *&gt; * _Nonnull mathes, <span class="built_in">NSError</span> * _Nonnull error)</span><br><span class="line"> &#123;</span><br><span class="line">     __<span class="keyword">strong</span> __<span class="keyword">typeof</span>(weakSelf)strongSelf = weakSelf;</span><br><span class="line">     strongSelf.matchList = mathes;</span><br><span class="line">     [strongSelf.tableView reloadData];</span><br><span class="line"> &#125;];</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-4-创建遥控器" class="article-heading"><a href="#4-4-创建遥控器" class="headerlink" title="4.4 创建遥控器"></a>4.4 创建遥控器<a class="article-anchor" href="#4-4-创建遥控器" aria-hidden="true"></a></h2><p>匹配成功后，通过遥控器ID下载整套遥控码创建遥控器。</p>
+<p>【示例代码】<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">__<span class="keyword">weak</span> __<span class="keyword">typeof</span>(<span class="keyword">self</span>)weakSelf = <span class="keyword">self</span>;</span><br><span class="line">[YKCenterSDK fetchRemoteDeivceWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]</span><br><span class="line">                         remoteDeviceId:<span class="keyword">self</span>.matchDevice.rid</span><br><span class="line">                             completion:^(YKRemoteDevice * _Nonnull remote, <span class="built_in">NSError</span> * _Nonnull error)</span><br><span class="line"> &#123;</span><br><span class="line">     <span class="keyword">if</span> (error == <span class="literal">nil</span>) &#123;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;];</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-5-删除遥控器" class="article-heading"><a href="#4-5-删除遥控器" class="headerlink" title="4.5 删除遥控器"></a>4.5 删除遥控器<a class="article-anchor" href="#4-5-删除遥控器" aria-hidden="true"></a></h2><p>【示例代码】<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">YKRemoteDevice *device = <span class="keyword">self</span>.remotes[indexPath.row];</span><br><span class="line"><span class="keyword">if</span> ([device remove]) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"删除成功"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"删除失败"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="5-遥控码库管理" class="article-heading"><a href="#5-遥控码库管理" class="headerlink" title="5. 遥控码库管理"></a>5. 遥控码库管理<a class="article-anchor" href="#5-遥控码库管理" aria-hidden="true"></a></h1><h2 id="5-1-发码遥控" class="article-heading"><a href="#5-1-发码遥控" class="headerlink" title="5.1 发码遥控"></a>5.1 发码遥控<a class="article-anchor" href="#5-1-发码遥控" aria-hidden="true"></a></h2><p>【示例代码】<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">YKRemoteDeviceKey *key = <span class="keyword">self</span>.remote.keys[indexPath.row];</span><br><span class="line"></span><br><span class="line">[YKCenterSDK sendRemoteWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]</span><br><span class="line">                           datas:@[key]</span><br><span class="line">                      completion:^(<span class="keyword">id</span>  _Nonnull result, <span class="built_in">NSError</span> * _Nonnull error) &#123;</span><br><span class="line">    <span class="comment">// 发码结果回调</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-2-红外码学习" class="article-heading"><a href="#5-2-红外码学习" class="headerlink" title="5.2 红外码学习"></a>5.2 红外码学习<a class="article-anchor" href="#5-2-红外码学习" aria-hidden="true"></a></h2><p>调用学码方法后，遥控中心设备会进入快闪的学习模式，在超时自动退出之前学到码会通过回调 block 返回学习到的码，如果失败则为空。</p>
+<p>【示例代码】<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">IBAction</span>)learnCode:(<span class="keyword">id</span>)sender &#123;</span><br><span class="line">    __<span class="keyword">weak</span> __<span class="keyword">typeof</span>(<span class="keyword">self</span>)weakSelf = <span class="keyword">self</span>;</span><br><span class="line">    [YKCenterSDK learnCodeWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]</span><br><span class="line">                         completion:^(<span class="built_in">BOOL</span> result, <span class="built_in">NSString</span> * _Nullable code)</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="built_in">NSLog</span>(<span class="string">@"result:%ld, code:%@"</span>, (<span class="keyword">long</span>)result, code);</span><br><span class="line">     &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-3-退出学习" class="article-heading"><a href="#5-3-退出学习" class="headerlink" title="5.3 退出学习"></a>5.3 退出学习<a class="article-anchor" href="#5-3-退出学习" aria-hidden="true"></a></h2><p>发送此命令后，小苹果会马上退出学习状态（LED灯退出快闪状态）。</p>
+<p>【示例代码】<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[YKCenterSDK stopLearnCode:[[YKCenterCommon sharedInstance] currentYKCId]];</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-4-数据透传（小苹果2代）" class="article-heading"><a href="#5-4-数据透传（小苹果2代）" class="headerlink" title="5.4 数据透传（小苹果2代）"></a>5.4 数据透传（小苹果2代）<a class="article-anchor" href="#5-4-数据透传（小苹果2代）" aria-hidden="true"></a></h2><h3 id="数据发送" class="article-heading"><a href="#数据发送" class="headerlink" title="数据发送"></a>数据发送<a class="article-anchor" href="#数据发送" aria-hidden="true"></a></h3><p>数据长度不能大于844。</p>
+<p>【示例代码】<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">IBAction</span>)sendTrunk:(<span class="keyword">id</span>)sender &#123;</span><br><span class="line">    [YKCenterSDK sendTrunkWithYKCId:[[YKCenterCommon sharedInstance] currentYKCId]</span><br><span class="line">                               data:[<span class="keyword">self</span>.inputField.text dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>]</span><br><span class="line">                         completion:^(<span class="keyword">id</span>  _Nonnull result, <span class="built_in">NSError</span> * _Nonnull error)</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="built_in">NSLog</span>(<span class="string">@"result:%@, error:%@"</span>, result, error);</span><br><span class="line">     &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="数据接收" class="article-heading"><a href="#数据接收" class="headerlink" title="数据接收"></a>数据接收<a class="article-anchor" href="#数据接收" aria-hidden="true"></a></h3><p>在接收数据之前需要设置一个接收数据的回调接口。</p>
+<p>【示例代码】<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewDidAppear:(<span class="built_in">BOOL</span>)animated &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidAppear:animated];</span><br><span class="line">    </span><br><span class="line">    __<span class="keyword">weak</span> __<span class="keyword">typeof</span>(<span class="keyword">self</span>)weakSelf = <span class="keyword">self</span>;</span><br><span class="line">    [YKCenterSDK registerReceiveTrunkDataHandler:^(<span class="built_in">NSData</span> * _Nonnull trunkData) &#123;</span><br><span class="line">        [weakSelf updateTextViewWithData:trunkData];</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidDisappear:(<span class="built_in">BOOL</span>)animated &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidDisappear:animated];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// unregister</span></span><br><span class="line">    [YKCenterSDK registerReceiveTrunkDataHandler:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-10-29T06:00:26.158Z" itemprop="dateModified">上次更新：2018-10-29</time>
+                <a href="index.html" class="article-footer-prev" title="概述"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="update_log.html" class="article-footer-next" title="更新日志"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-SDK初始化"><span class="toc-text">1. SDK初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-申请-AppId"><span class="toc-text">1.1 申请 AppId</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-引用头文件"><span class="toc-text">1.2 引用头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-初始化SDK"><span class="toc-text">1.3 初始化SDK</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-用户管理"><span class="toc-text">2. 用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-用户注册"><span class="toc-text">2.1.    用户注册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-手机注册"><span class="toc-text">2.1.1 手机注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-普通注册"><span class="toc-text">2.1.2 普通注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-邮箱注册"><span class="toc-text">2.1.3 邮箱注册</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-用户登录"><span class="toc-text">2.2 用户登录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-普通用户登录"><span class="toc-text">2.2.1 普通用户登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-手机-邮箱登录"><span class="toc-text">2.2.2 手机/邮箱登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-匿名登录"><span class="toc-text">2.2.3 匿名登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-重置密码"><span class="toc-text">2.3 重置密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-手机号重置密码"><span class="toc-text">2.3.1 手机号重置密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-邮箱重置密码"><span class="toc-text">2.3.2 邮箱重置密码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-遥控中心设备管理"><span class="toc-text">3. 遥控中心设备管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-遥控中心设备发现"><span class="toc-text">3.1 遥控中心设备发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-订阅和绑定"><span class="toc-text">3.2 订阅和绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-订阅"><span class="toc-text">3.2.1 订阅</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-2-2-绑定"><span class="toc-text">3.2.2 绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-解绑"><span class="toc-text">3.3 解绑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-遥控器管理"><span class="toc-text">4. 遥控器管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-获取遥控器类型"><span class="toc-text">4.1 获取遥控器类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-获取品牌"><span class="toc-text">4.2 获取品牌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-获取匹配数据"><span class="toc-text">4.3 获取匹配数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-创建遥控器"><span class="toc-text">4.4 创建遥控器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-删除遥控器"><span class="toc-text">4.5 删除遥控器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-遥控码库管理"><span class="toc-text">5. 遥控码库管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-发码遥控"><span class="toc-text">5.1 发码遥控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-红外码学习"><span class="toc-text">5.2 红外码学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-退出学习"><span class="toc-text">5.3 退出学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-数据透传（小苹果2代）"><span class="toc-text">5.4 数据透传（小苹果2代）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据发送"><span class="toc-text">数据发送</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据接收"><span class="toc-text">数据接收</span></a></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">SDK文档</strong><a href="index.html" class="sidebar-link">概述</a><a href="detailed.html" class="sidebar-link current">SDK流程详解</a><a href="update_log.html" class="sidebar-link">更新日志</a><a href="code_description.html" class="sidebar-link">错误码说明</a><a href="rc_key.html" class="sidebar-link">遥控器键名</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="https://www.yaokantv.com" target="_blank">Yaokantv</a><br>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs_ios/" class="mobile-nav-link">iOS-SDK</a><a href="/zh-cn/docs_android/" class="mobile-nav-link">安卓-SDK</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/hexojs/hexo" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">SDK文档</strong><a href="index.html" class="mobile-nav-link">概述</a><a href="detailed.html" class="mobile-nav-link current">SDK流程详解</a><a href="update_log.html" class="mobile-nav-link">更新日志</a><a href="code_description.html" class="mobile-nav-link">错误码说明</a><a href="rc_key.html" class="mobile-nav-link">遥控器键名</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en-us">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+ <script type="text/javascript">
+// document.getElementById('search-input-wrap').classList.add('on'); 
+// docsearch({
+//   apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+//   indexName: 'hexo_zh-cn',
+//   inputSelector: '#search-input'
+// });
+ </script>
+
+
+</body>
+</html>
