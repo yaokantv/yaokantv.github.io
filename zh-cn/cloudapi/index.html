@@ -40,17 +40,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Yaokantv">
   <!-- Open Graph -->
-  <meta name="description" content="Yaokan 酒店网关云 API 接口文档文件编号：YAOKANHOTELAPI-20190920版本：v1.0深圳遥看科技有限公司（版权所有，切勿拷贝）  概述   提供用户设备绑定、解绑、设备数据查询等功能。  文档阅读对象   酒店系统开发者  接口规范   3.1. 请求头   名称 类型 是否必须 示例 说明     appId string yes appid 平台分配的APPID">
+  <meta name="description" content="Yaokan Cloud API 接口文档文件编号：YAOKANCLOUDAPI-20190902 版本：v1.0  深圳遥看科技有限公司 （版权所有，切勿拷贝）    版本 说明 备注 日期     v1.0 新建 Mark 20190902          1. 概述遥看云接口，提供通过HTTP协议查看设备状态、向设备发送控制指令功能。 2. 文档阅读对象使用遥看云产品,想通过云云对接实现设">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yaokantv">
 <meta property="og:url" content="https://doc.yaokantv.com/zh-cn/cloudapi/index.html">
 <meta property="og:site_name" content="Yaokantv">
-<meta property="og:description" content="Yaokan 酒店网关云 API 接口文档文件编号：YAOKANHOTELAPI-20190920版本：v1.0深圳遥看科技有限公司（版权所有，切勿拷贝）  概述   提供用户设备绑定、解绑、设备数据查询等功能。  文档阅读对象   酒店系统开发者  接口规范   3.1. 请求头   名称 类型 是否必须 示例 说明     appId string yes appid 平台分配的APPID">
+<meta property="og:description" content="Yaokan Cloud API 接口文档文件编号：YAOKANCLOUDAPI-20190902 版本：v1.0  深圳遥看科技有限公司 （版权所有，切勿拷贝）    版本 说明 备注 日期     v1.0 新建 Mark 20190902          1. 概述遥看云接口，提供通过HTTP协议查看设备状态、向设备发送控制指令功能。 2. 文档阅读对象使用遥看云产品,想通过云云对接实现设">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-09-20T09:10:46.062Z">
+<meta property="og:updated_time" content="2019-09-23T03:56:47.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yaokantv">
-<meta name="twitter:description" content="Yaokan 酒店网关云 API 接口文档文件编号：YAOKANHOTELAPI-20190920版本：v1.0深圳遥看科技有限公司（版权所有，切勿拷贝）  概述   提供用户设备绑定、解绑、设备数据查询等功能。  文档阅读对象   酒店系统开发者  接口规范   3.1. 请求头   名称 类型 是否必须 示例 说明     appId string yes appid 平台分配的APPID">
+<meta name="twitter:description" content="Yaokan Cloud API 接口文档文件编号：YAOKANCLOUDAPI-20190902 版本：v1.0  深圳遥看科技有限公司 （版权所有，切勿拷贝）    版本 说明 备注 日期     v1.0 新建 Mark 20190902          1. 概述遥看云接口，提供通过HTTP协议查看设备状态、向设备发送控制指令功能。 2. 文档阅读对象使用遥看云产品,想通过云云对接实现设">
 <meta name="twitter:site" content="hexojs">
 <meta property="fb:admins" content="100000247608790">
   <!-- Google Analytics -->
@@ -112,22 +112,38 @@
                 <a href="https://github.com/yaokantv/yk_wiki/edit/master/source/zh-cn/cloudapi/index.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <h1 id="Yaokan-酒店网关云-API-接口文档" class="article-heading"><a href="#Yaokan-酒店网关云-API-接口文档" class="headerlink" title="Yaokan 酒店网关云 API 接口文档"></a>Yaokan 酒店网关云 API 接口文档<a class="article-anchor" href="#Yaokan-酒店网关云-API-接口文档" aria-hidden="true"></a></h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">文件编号：YAOKANHOTELAPI-20190920</span><br><span class="line">版本：v1.0</span><br><span class="line"></span><br><span class="line">深圳遥看科技有限公司</span><br><span class="line">（版权所有，切勿拷贝）</span><br></pre></td></tr></table></figure>
-<ol>
-<li>概述</li>
-</ol>
-<hr>
-<p>提供用户设备绑定、解绑、设备数据查询等功能。</p>
-<ol start="2">
-<li>文档阅读对象</li>
-</ol>
-<hr>
-<p>酒店系统开发者</p>
-<ol start="3">
-<li>接口规范</li>
-</ol>
-<hr>
-<h3 id="3-1-请求头" class="article-heading"><a href="#3-1-请求头" class="headerlink" title="3.1. 请求头"></a>3.1. 请求头<a class="article-anchor" href="#3-1-请求头" aria-hidden="true"></a></h3><table>
+                <h1 id="Yaokan-Cloud-API-接口文档" class="article-heading"><a href="#Yaokan-Cloud-API-接口文档" class="headerlink" title="Yaokan Cloud API 接口文档"></a>Yaokan Cloud API 接口文档<a class="article-anchor" href="#Yaokan-Cloud-API-接口文档" aria-hidden="true"></a></h1><pre><code>文件编号：YAOKANCLOUDAPI-20190902
+版本：v1.0
+
+深圳遥看科技有限公司
+（版权所有，切勿拷贝）
+</code></pre><table>
+<thead>
+<tr>
+<th>版本</th>
+<th>说明</th>
+<th>备注</th>
+<th>日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.0</td>
+<td>新建</td>
+<td>Mark</td>
+<td>20190902</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-概述" class="article-heading"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述<a class="article-anchor" href="#1-概述" aria-hidden="true"></a></h2><p>遥看云接口，提供通过HTTP协议查看设备状态、向设备发送控制指令功能。</p>
+<h2 id="2-文档阅读对象" class="article-heading"><a href="#2-文档阅读对象" class="headerlink" title="2. 文档阅读对象"></a>2. 文档阅读对象<a class="article-anchor" href="#2-文档阅读对象" aria-hidden="true"></a></h2><p>使用遥看云产品,想通过云云对接实现设备的控制的客户</p>
+<h2 id="3-接口规范" class="article-heading"><a href="#3-接口规范" class="headerlink" title="3. 接口规范"></a>3. 接口规范<a class="article-anchor" href="#3-接口规范" aria-hidden="true"></a></h2><h3 id="3-1-请求头" class="article-heading"><a href="#3-1-请求头" class="headerlink" title="3.1. 请求头"></a>3.1. 请求头<a class="article-anchor" href="#3-1-请求头" aria-hidden="true"></a></h3><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -138,6 +154,13 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Content-Type</td>
+<td>string</td>
+<td>yes</td>
+<td>application/x-www-form-urlencoded</td>
+<td>设置请求体的MIME类型</td>
+</tr>
 <tr>
 <td>appId</td>
 <td>string</td>
@@ -161,20 +184,15 @@
 </tr>
 </tbody>
 </table>
-<h3 id="3-2-签名生成算法" class="article-heading"><a href="#3-2-签名生成算法" class="headerlink" title="3.2. 签名生成算法"></a>3.2. 签名生成算法<a class="article-anchor" href="#3-2-签名生成算法" aria-hidden="true"></a></h3><p>将appId、timestamp拼接成字符串A，然后对A做MD5加密获得字符串B，然后取B的第1，3，7，15，31位置上的字符，拼接成C，C即为签名的值</p>
-<p>PHP示例:</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$appId=<span class="string">"94d3b83bd9f00589acac31520664993e"</span></span><br><span class="line">$timestamp=<span class="number">1567482133</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//拼接签名参数字符串</span></span><br><span class="line"></span><br><span class="line">$signStr=($appId.$timestamp)=<span class="string">"94d3b83bd9f00589acac31520664993e1567482275"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//签名字符串做MD5</span></span><br><span class="line"></span><br><span class="line">$B=md5($signStr)=<span class="string">"dd46a0efcbb5b125e96065d651ecf86c"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//取MD5后指定位上的内容</span></span><br><span class="line"></span><br><span class="line">$C=$B&#123;<span class="number">1</span>&#125;+$B&#123;<span class="number">3</span>&#125;+$B&#123;<span class="number">7</span>&#125;+$B&#123;<span class="number">15</span>&#125;+$B&#123;<span class="number">31</span>&#125;=d6f5c</span><br></pre></td></tr></table></figure>
-<h3 id="3-3-请求方式-POST" class="article-heading"><a href="#3-3-请求方式-POST" class="headerlink" title="3.3. 请求方式:POST"></a>3.3. 请求方式:POST<a class="article-anchor" href="#3-3-请求方式-POST" aria-hidden="true"></a></h3><h3 id="3-4-返回格式-JSON，并且data数据做加密" class="article-heading"><a href="#3-4-返回格式-JSON，并且data数据做加密" class="headerlink" title="3.4. 返回格式:JSON，并且data数据做加密"></a>3.4. 返回格式:JSON，并且data数据做加密<a class="article-anchor" href="#3-4-返回格式-JSON，并且data数据做加密" aria-hidden="true"></a></h3><h3 id="3-5-请求参数data的加密：" class="article-heading"><a href="#3-5-请求参数data的加密：" class="headerlink" title="3.5. 请求参数data的加密："></a>3.5. 请求参数data的加密：<a class="article-anchor" href="#3-5-请求参数data的加密：" aria-hidden="true"></a></h3><p>data体做json编码后，再做AES加密，最后做BASE64编码</p>
-<p>其中，AES的key为appSecret的高16位，AES的偏移量为appSecret的低16位；</p>
-<h3 id="3-6-响应参数data的解密：" class="article-heading"><a href="#3-6-响应参数data的解密：" class="headerlink" title="3.6. 响应参数data的解密："></a>3.6. 响应参数data的解密：<a class="article-anchor" href="#3-6-响应参数data的解密：" aria-hidden="true"></a></h3><p>服务端将对data数据做json编码，再做AES加密，最后做BASE64编码</p>
-<p>其中，AES的key为appSecret的高16位，AES的偏移量为appSecret的低16位；</p>
-<h3 id="3-7-请求地址：" class="article-heading"><a href="#3-7-请求地址：" class="headerlink" title="3.7. 请求地址："></a>3.7. 请求地址：<a class="article-anchor" href="#3-7-请求地址：" aria-hidden="true"></a></h3><p>测试环境：<a href="https://demo.yaokantv.com:8215/hotel/v1" target="_blank" rel="noopener">https://demo.yaokantv.com:8215/hotel/v1</a></p>
-<p>正式环境：<a href="https://hotelapi.yaokantv.com/hotel/v1" target="_blank" rel="noopener">https://hotelapi.yaokantv.com/hotel/v1</a></p>
-<ol start="4">
-<li>API 列表</li>
+<h3 id="3-2-签名生成算法" class="article-heading"><a href="#3-2-签名生成算法" class="headerlink" title="3.2. 签名生成算法"></a>3.2. 签名生成算法<a class="article-anchor" href="#3-2-签名生成算法" aria-hidden="true"></a></h3><p>将<code>appSecret</code>、请求时间戳<code>timestamp</code>拼接成字符串A，然后对A做<code>MD5</code>加密获得字符串B，然后取B的第<code>1，3，7，15，31</code>位置上的字符，拼接成C，C即为签名的值</p>
+<p>PHP示例:<br><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$appSecret=<span class="string">'bf356292227b87ea06470ebdd52088cc'</span></span><br><span class="line">$timestamp=<span class="number">1568801254</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//拼接签名参数字符串</span></span><br><span class="line"></span><br><span class="line">$signStr=($appSecret.$timestamp)=<span class="string">'bf356292227b87ea06470ebdd52088cc1568801254'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//签名字符串做MD5</span></span><br><span class="line"></span><br><span class="line">$B=md5($signStr)=<span class="string">'d74872aefc98db97678e4f5f2dd865f8'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//取MD5后指定位上的内容</span></span><br><span class="line"></span><br><span class="line">$C=$B&#123;<span class="number">1</span>&#125;+$B&#123;<span class="number">3</span>&#125;+$B&#123;<span class="number">7</span>&#125;+$B&#123;<span class="number">15</span>&#125;+$B&#123;<span class="number">31</span>&#125;=<span class="number">78e78</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3-请求方式-POST" class="article-heading"><a href="#3-3-请求方式-POST" class="headerlink" title="3.3. 请求方式:POST"></a>3.3. 请求方式:POST<a class="article-anchor" href="#3-3-请求方式-POST" aria-hidden="true"></a></h3><h3 id="3-4-返回格式-JSON" class="article-heading"><a href="#3-4-返回格式-JSON" class="headerlink" title="3.4. 返回格式:JSON"></a>3.4. 返回格式:JSON<a class="article-anchor" href="#3-4-返回格式-JSON" aria-hidden="true"></a></h3><h3 id="3-5-请求地址：" class="article-heading"><a href="#3-5-请求地址：" class="headerlink" title="3.5. 请求地址："></a>3.5. 请求地址：<a class="article-anchor" href="#3-5-请求地址：" aria-hidden="true"></a></h3><ol>
+<li><p>测试环境：<code>demo.yaokantv.com:8211/cloud/v1</code></p>
+</li>
+<li><p>正式环境：<code>ykc.yaokantv.com/cloud/v1</code></p>
+</li>
 </ol>
-<hr>
-<h3 id="4-1-设备绑定用户" class="article-heading"><a href="#4-1-设备绑定用户" class="headerlink" title="4.1. 设备绑定用户"></a>4.1. 设备绑定用户<a class="article-anchor" href="#4-1-设备绑定用户" aria-hidden="true"></a></h3><p>请求参数:</p>
+<h2 id="4-API-列表" class="article-heading"><a href="#4-API-列表" class="headerlink" title="4. API 列表"></a>4. API 列表<a class="article-anchor" href="#4-API-列表" aria-hidden="true"></a></h2><h3 id="4-1-查询设备状态" class="article-heading"><a href="#4-1-查询设备状态" class="headerlink" title="4.1. 查询设备状态"></a>4.1. 查询设备状态<a class="article-anchor" href="#4-1-查询设备状态" aria-hidden="true"></a></h3><p>请求参数:</p>
 <table>
 <thead>
 <tr>
@@ -191,42 +209,14 @@
 <td>int</td>
 <td>yes</td>
 <td>1001</td>
-<td>请求类型，固定值</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td>data string</td>
-<td>加密后的data字符串</td>
-</tr>
-</tbody>
-</table>
-<p>请求参数data说明:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>token</td>
-<td>string</td>
-<td>yes</td>
-<td>user token</td>
-<td>用户授权码</td>
+<td>请求资源类型，固定值</td>
 </tr>
 <tr>
 <td>macs</td>
 <td>string</td>
 <td>yes</td>
 <td>mac1,mac2</td>
-<td>用户授权码的mac，多个以英文逗号分隔</td>
+<td>所查询状态的设备mac，多个以英文逗号分隔</td>
 </tr>
 </tbody>
 </table>
@@ -255,15 +245,42 @@
 </tr>
 <tr>
 <td>data</td>
-<td>string</td>
+<td>array</td>
 <td>yes</td>
-<td>空字符串</td>
+<td>成功时的响应数据</td>
 </tr>
 </tbody>
 </table>
-<p>响应数据示例:</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"errorCode"</span>:<span class="number">0</span>,<span class="attr">"message"</span>:<span class="string">"Operate Success"</span>,<span class="attr">"data"</span>:''&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-2-设备解绑用户" class="article-heading"><a href="#4-2-设备解绑用户" class="headerlink" title="4.2. 设备解绑用户"></a>4.2. 设备解绑用户<a class="article-anchor" href="#4-2-设备解绑用户" aria-hidden="true"></a></h3><p>请求参数:</p>
+<p>data说明:</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mac</td>
+<td>string</td>
+<td>yes</td>
+<td>mac1</td>
+<td>设备mac</td>
+</tr>
+<tr>
+<td>state</td>
+<td>int</td>
+<td>yes</td>
+<td>1</td>
+<td>设备在线状态：0-离线；1-在线</td>
+</tr>
+</tbody>
+</table>
+<p>响应数据示例:<br><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"errorCode"</span>:<span class="number">0</span>,<span class="attr">"message"</span>:<span class="string">"Operate Success"</span>,<span class="attr">"data"</span>:[&#123;<span class="attr">"did"</span>:<span class="string">"C975F459BCC1**C9"</span>,<span class="attr">"state"</span>:<span class="number">0</span>&#125;,&#123;<span class="attr">"did"</span>:<span class="string">"7B4D145E7D63**DD"</span>,<span class="attr">"state"</span>:<span class="number">1</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-2-发送控制指令" class="article-heading"><a href="#4-2-发送控制指令" class="headerlink" title="4.2. 发送控制指令"></a>4.2. 发送控制指令<a class="article-anchor" href="#4-2-发送控制指令" aria-hidden="true"></a></h3><p>请求参数:</p>
 <table>
 <thead>
 <tr>
@@ -280,525 +297,35 @@
 <td>int</td>
 <td>yes</td>
 <td>1002</td>
-<td>请求类型，固定值</td>
+<td>请求资源类型，固定值</td>
 </tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td>data string</td>
-<td>加密后的data字符串</td>
-</tr>
-</tbody>
-</table>
-<p>请求参数data说明:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>token</td>
-<td>string</td>
-<td>yes</td>
-<td>user token</td>
-<td>用户授权码</td>
-</tr>
-</tbody>
-</table>
-<p>响应数据:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>errorCode</td>
-<td>int</td>
-<td>yes</td>
-<td>状态码，0-表示成功，其它值表示失败</td>
-</tr>
-<tr>
-<td>message</td>
-<td>string</td>
-<td>yes</td>
-<td>错误信息，成功时为空字符串；失败时为错误原因</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td>空字符串</td>
-</tr>
-</tbody>
-</table>
-<p>响应数据示例:</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"errorCode"</span>:<span class="number">0</span>,<span class="attr">"message"</span>:<span class="string">"Operate Success"</span>,<span class="attr">"data"</span>:''&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-3-获取遥控器列表" class="article-heading"><a href="#4-3-获取遥控器列表" class="headerlink" title="4.3. 获取遥控器列表"></a>4.3. 获取遥控器列表<a class="article-anchor" href="#4-3-获取遥控器列表" aria-hidden="true"></a></h3><p>请求参数:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>reqType</td>
-<td>int</td>
-<td>yes</td>
-<td>1003</td>
-<td>请求类型，固定值</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td>data string</td>
-<td>加密后的data字符串</td>
-</tr>
-</tbody>
-</table>
-<p>请求参数data说明:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>macs</td>
-<td>string</td>
-<td>yes</td>
-<td>mac1,mac2</td>
-<td>授权码的mac，多个以英文逗号分隔</td>
-</tr>
-</tbody>
-</table>
-<p>响应数据:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th></th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>errorCode</td>
-<td>int</td>
-<td>yes</td>
-<td></td>
-<td>状态码，0-表示成功，其它值表示失败</td>
-</tr>
-<tr>
-<td>message</td>
-<td>string</td>
-<td>yes</td>
-<td></td>
-<td>错误信息，成功时为空字符串；失败时为错误原因</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td></td>
-<td>AES加密后的响应数据</td>
-</tr>
-</tbody>
-</table>
-<p>data解密后为数组，包含多个遥控器对象，遥控器对象说明如下：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th></th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>deviceId</td>
-<td>string</td>
-<td>yes</td>
-<td></td>
-<td>遥控器ID</td>
-</tr>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>yes</td>
-<td></td>
-<td>遥控器类型名称</td>
-</tr>
-<tr>
-<td>rcType</td>
-<td>int</td>
-<td>yes</td>
-<td></td>
-<td>遥控器类型ID</td>
-</tr>
-</tbody>
-</table>
-<p>响应数据示例:</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"errorCode"</span>:<span class="number">0</span>,<span class="attr">"message"</span>:<span class="string">"Operate Success"</span>,<span class="attr">"data"</span>:[&#123;<span class="attr">"tag"</span>:<span class="number">1</span>,<span class="attr">"value"</span>:<span class="number">12.0000</span>&#125;,&#123;<span class="attr">"tag"</span>:<span class="number">2</span>,<span class="attr">"value"</span>:<span class="number">23.0000</span>&#125;,&#123;<span class="attr">"tag"</span>:<span class="number">3</span>,<span class="attr">"value"</span>:<span class="number">45.0000</span>&#125;]&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-4-遥控器状态查询-仅支持空调类型设备" class="article-heading"><a href="#4-4-遥控器状态查询-仅支持空调类型设备" class="headerlink" title="4.4. 遥控器状态查询(仅支持空调类型设备)"></a>4.4. 遥控器状态查询(仅支持空调类型设备)<a class="article-anchor" href="#4-4-遥控器状态查询-仅支持空调类型设备" aria-hidden="true"></a></h3><p>请求参数:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>reqType</td>
-<td>int</td>
-<td>yes</td>
-<td>1004</td>
-<td>请求类型，固定值</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td>data string</td>
-<td>加密后的data字符串</td>
-</tr>
-</tbody>
-</table>
-<p>请求参数data说明:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>deviceId</td>
-<td>string</td>
-<td>yes</td>
-<td>deviceId值</td>
-<td>遥控器ID</td>
-</tr>
-</tbody>
-</table>
-<p>响应数据:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>errorCode</td>
-<td>int</td>
-<td>yes</td>
-<td>状态码，0-表示成功，其它值表示失败</td>
-</tr>
-<tr>
-<td>message</td>
-<td>string</td>
-<td>yes</td>
-<td>错误信息，成功时为空字符串；失败时为错误原因</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td>AES加密后的响应数据</td>
-</tr>
-</tbody>
-</table>
-<p>data解密后为一个状态对象，说明如下：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mode</td>
-<td>string</td>
-<td>yes</td>
-<td>模式：cold-制冷;heat-制热;auto-自动;dry-除湿;wind-送风</td>
-</tr>
-<tr>
-<td>speed</td>
-<td>string</td>
-<td>yes</td>
-<td>风速：s0-自动；s1-1档；s2-2档；s3-3档</td>
-</tr>
-<tr>
-<td>temp</td>
-<td>int</td>
-<td>yes</td>
-<td>温度值</td>
-</tr>
-<tr>
-<td>windUd</td>
-<td>string</td>
-<td>yes</td>
-<td>上下扫风状态：on-开；off-关；none-不支持</td>
-</tr>
-<tr>
-<td>windLr</td>
-<td>string</td>
-<td>yes</td>
-<td>左右扫风状态：on-开；off-关；none-不支持</td>
-</tr>
-<tr>
-<td>power</td>
-<td>string</td>
-<td>yes</td>
-<td>电源状态：on-开；off-关；</td>
-</tr>
-</tbody>
-</table>
-<p>响应数据示例:</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[&#123;<span class="attr">"deviceId"</span>:<span class="string">"deviceId"</span>,<span class="attr">"name"</span>:<span class="string">"空调"</span>,<span class="attr">"rcType"</span>:<span class="number">7</span>,<span class="attr">"state"</span>:&#123;<span class="attr">"mode"</span>:<span class="string">"cold"</span>,<span class="attr">"speed"</span>:<span class="string">"auto"</span>,<span class="attr">"temp"</span>:<span class="string">"25"</span>,<span class="attr">"windLeft"</span>:<span class="string">"on"</span>,<span class="attr">"windUp"</span>:<span class="string">"off"</span>&#125;&#125;]</span><br></pre></td></tr></table></figure>
-<h3 id="4-5-设备用电量查询-部分设备支持" class="article-heading"><a href="#4-5-设备用电量查询-部分设备支持" class="headerlink" title="4.5. 设备用电量查询(部分设备支持)"></a>4.5. 设备用电量查询(部分设备支持)<a class="article-anchor" href="#4-5-设备用电量查询-部分设备支持" aria-hidden="true"></a></h3><p>请求参数:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>reqType</td>
-<td>int</td>
-<td>yes</td>
-<td>1005</td>
-<td>请求类型，固定值</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td>data string</td>
-<td>加密后的data字符串</td>
-</tr>
-</tbody>
-</table>
-<p>请求参数data说明:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>mac</td>
 <td>string</td>
 <td>yes</td>
-<td>mac</td>
-<td>设备的mac</td>
+<td>did</td>
+<td>接收指令的设备mac</td>
 </tr>
 <tr>
-<td>unit</td>
-<td>string</td>
-<td>yes</td>
-<td>hour</td>
-<td>查询的统计单位：hour,day,week,month,year</td>
-</tr>
-<tr>
-<td>timeBegin</td>
+<td>codeType</td>
 <td>int</td>
 <td>yes</td>
-<td>hour</td>
-<td>查询的开始时间戳</td>
+<td>1</td>
+<td>1:官方红外码,2.学习,3.官方红外码-STB,4:射频</td>
 </tr>
 <tr>
-<td>timeEnd</td>
-<td>int</td>
-<td>yes</td>
-<td>hour</td>
-<td>查询的结束时间戳</td>
-</tr>
-</tbody>
-</table>
-<p>响应数据:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th></th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>errorCode</td>
-<td>int</td>
-<td>yes</td>
-<td></td>
-<td>状态码，0-表示成功，其它值表示失败</td>
-</tr>
-<tr>
-<td>message</td>
+<td>rid</td>
 <td>string</td>
 <td>yes</td>
-<td></td>
-<td>错误信息，成功时为空字符串；失败时为错误原因</td>
+<td>rid</td>
+<td>码库id</td>
 </tr>
 <tr>
-<td>data</td>
+<td>cmds</td>
 <td>string</td>
 <td>yes</td>
-<td></td>
-<td>AES加密后的响应数据</td>
-</tr>
-</tbody>
-</table>
-<p>data说明:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th></th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>tag</td>
-<td>int</td>
-<td>yes</td>
-<td></td>
-<td>统计单位序号，如1天的1</td>
-</tr>
-<tr>
-<td>value</td>
-<td>float</td>
-<td>yes</td>
-<td></td>
-<td>单位时间内的用电量，精度为0.0001</td>
-</tr>
-<tr>
-<td>createdAt</td>
-<td>datetime</td>
-<td>yes</td>
-<td></td>
-<td>统计时间</td>
-</tr>
-</tbody>
-</table>
-<p>响应数据示例:</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"errorCode"</span>:<span class="number">0</span>,<span class="attr">"message"</span>:<span class="string">"Operate Success"</span>,<span class="attr">"data"</span>:[&#123;<span class="attr">"tag"</span>:<span class="number">1</span>,<span class="attr">"value"</span>:<span class="number">12.0000</span>&#125;,&#123;<span class="attr">"tag"</span>:<span class="number">2</span>,<span class="attr">"value"</span>:<span class="number">23.0000</span>&#125;,&#123;<span class="attr">"tag"</span>:<span class="number">3</span>,<span class="attr">"value"</span>:<span class="number">45.0000</span>&#125;]&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-6-设备控制" class="article-heading"><a href="#4-6-设备控制" class="headerlink" title="4.6. 设备控制"></a>4.6. 设备控制<a class="article-anchor" href="#4-6-设备控制" aria-hidden="true"></a></h3><p>请求参数:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>reqType</td>
-<td>int</td>
-<td>yes</td>
-<td>1006</td>
-<td>请求类型，固定值</td>
-</tr>
-<tr>
-<td>data</td>
-<td>string</td>
-<td>yes</td>
-<td>data string</td>
-<td>加密后的data字符串</td>
-</tr>
-</tbody>
-</table>
-<p>请求参数data说明:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必须</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mac</td>
-<td>string</td>
-<td>yes</td>
-<td>mac</td>
-<td>设备的mac</td>
-</tr>
-<tr>
-<td>deviceId</td>
-<td>string</td>
-<td>yes</td>
-<td>deviceId</td>
-<td>遥控器ID，通过遥控器列表接口获得</td>
-</tr>
-<tr>
-<td>cmd</td>
-<td>string</td>
-<td>yes</td>
-<td>cmd</td>
-<td>透传天猫平台的标准指令</td>
+<td>cmdKey1,cmdKey2</td>
+<td>指令的键名，同一码库ID的多个指令，以英文逗号分隔</td>
 </tr>
 </tbody>
 </table>
@@ -827,19 +354,14 @@
 </tr>
 <tr>
 <td>data</td>
-<td>string</td>
+<td>array</td>
 <td>yes</td>
-<td>空字符串</td>
+<td>空数组</td>
 </tr>
 </tbody>
 </table>
-<p>响应数据示例:</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"errorCode"</span>:<span class="number">0</span>,<span class="attr">"message"</span>:<span class="string">"Operate Success"</span>,<span class="attr">"data"</span>:''&#125;</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>异常错误码描述</li>
-</ol>
-<hr>
-<p>5.1. 错误码规范： 0表示成功，其它值表示失败。</p>
+<p>响应数据示例:<br><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"errorCode"</span>:<span class="number">0</span>,<span class="attr">"message"</span>:<span class="string">"Operate Success"</span>,<span class="attr">"data"</span>:[]&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-异常错误码描述" class="article-heading"><a href="#5-异常错误码描述" class="headerlink" title="5. 异常错误码描述"></a>5. 异常错误码描述<a class="article-anchor" href="#5-异常错误码描述" aria-hidden="true"></a></h2><p>5.1. 错误码规范：<br>0表示成功，其它值表示失败。</p>
 <table>
 <thead>
 <tr>
@@ -855,53 +377,36 @@
 <tr>
 <td>100001</td>
 <td>参数相关错误</td>
+<td></td>
 </tr>
 <tr>
 <td>100002</td>
 <td>资源不存在</td>
+<td></td>
 </tr>
 <tr>
 <td>100201</td>
 <td>操作失败</td>
+<td></td>
 </tr>
 <tr>
 <td>100300</td>
 <td>权限相关信息</td>
+<td></td>
 </tr>
 <tr>
 <td>100301</td>
 <td>无效请求</td>
+<td></td>
 </tr>
 <tr>
 <td>100302</td>
 <td>无效请求</td>
+<td></td>
 </tr>
 <tr>
 <td>100500</td>
 <td>服务异常信息</td>
-</tr>
-</tbody>
-</table>
-<p>#更新历史</p>
-<table>
-<thead>
-<tr>
-<th>版本</th>
-<th>说明</th>
-<th>备注</th>
-<th>日期</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>v1.0</td>
-<td>新建</td>
-<td>Mark</td>
-<td>20190920</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -909,7 +414,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-09-20T09:10:46.062Z" itemprop="dateModified">上次更新：2019-09-20</time>
+                <time class="article-footer-updated" datetime="2019-09-23T03:56:47.534Z" itemprop="dateModified">上次更新：2019-09-23</time>
                 
               </footer>
             </div>
@@ -917,7 +422,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Yaokan-酒店网关云-API-接口文档"><span class="toc-text">Yaokan 酒店网关云 API 接口文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-请求头"><span class="toc-text">3.1. 请求头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-签名生成算法"><span class="toc-text">3.2. 签名生成算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-请求方式-POST"><span class="toc-text">3.3. 请求方式:POST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-返回格式-JSON，并且data数据做加密"><span class="toc-text">3.4. 返回格式:JSON，并且data数据做加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-请求参数data的加密："><span class="toc-text">3.5. 请求参数data的加密：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-响应参数data的解密："><span class="toc-text">3.6. 响应参数data的解密：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-请求地址："><span class="toc-text">3.7. 请求地址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-设备绑定用户"><span class="toc-text">4.1. 设备绑定用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-设备解绑用户"><span class="toc-text">4.2. 设备解绑用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-获取遥控器列表"><span class="toc-text">4.3. 获取遥控器列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-遥控器状态查询-仅支持空调类型设备"><span class="toc-text">4.4. 遥控器状态查询(仅支持空调类型设备)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-设备用电量查询-部分设备支持"><span class="toc-text">4.5. 设备用电量查询(部分设备支持)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-设备控制"><span class="toc-text">4.6. 设备控制</span></a></li></ol></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Yaokan-Cloud-API-接口文档"><span class="toc-text">Yaokan Cloud API 接口文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概述"><span class="toc-text">1. 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-文档阅读对象"><span class="toc-text">2. 文档阅读对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-接口规范"><span class="toc-text">3. 接口规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-请求头"><span class="toc-text">3.1. 请求头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-签名生成算法"><span class="toc-text">3.2. 签名生成算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-请求方式-POST"><span class="toc-text">3.3. 请求方式:POST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-返回格式-JSON"><span class="toc-text">3.4. 返回格式:JSON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-请求地址："><span class="toc-text">3.5. 请求地址：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-API-列表"><span class="toc-text">4. API 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-查询设备状态"><span class="toc-text">4.1. 查询设备状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-发送控制指令"><span class="toc-text">4.2. 发送控制指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-异常错误码描述"><span class="toc-text">5. 异常错误码描述</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
