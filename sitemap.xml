@@ -4,7 +4,7 @@
   <url>
     <loc>https://doc.yaokantv.com/zh-cn/cloudapi/index.html</loc>
     
-    <lastmod>2019-09-27T01:48:13.168Z</lastmod>
+    <lastmod>2019-09-27T02:41:07.590Z</lastmod>
     
   </url>
   
@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/zh-cn/docs_android/update_log.html</loc>
-    
-    <lastmod>2018-10-29T06:07:18.759Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/update_log.html</loc>
     
     <lastmod>2018-10-29T06:07:18.759Z</lastmod>
@@ -44,7 +37,14 @@
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/zh-cn/docs_android/rc_key.html</loc>
+    <loc>https://doc.yaokantv.com/zh-cn/docs_android/update_log.html</loc>
+    
+    <lastmod>2018-10-29T06:07:18.759Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/rc_key.html</loc>
     
     <lastmod>2018-10-29T06:05:16.832Z</lastmod>
     
@@ -58,13 +58,6 @@
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/rc_key.html</loc>
-    
-    <lastmod>2018-10-29T06:05:16.832Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/ios_rc_key.html</loc>
     
     <lastmod>2018-10-29T06:05:16.832Z</lastmod>
@@ -72,7 +65,21 @@
   </url>
   
   <url>
+    <loc>https://doc.yaokantv.com/zh-cn/docs_android/rc_key.html</loc>
+    
+    <lastmod>2018-10-29T06:05:16.832Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://doc.yaokantv.com/zh-cn/docs_ios/code_description.html</loc>
+    
+    <lastmod>2018-10-29T06:03:19.770Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://doc.yaokantv.com/zh-cn/docs_android/code_description.html</loc>
     
     <lastmod>2018-10-29T06:03:19.770Z</lastmod>
     
@@ -93,13 +100,6 @@
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/zh-cn/docs_android/code_description.html</loc>
-    
-    <lastmod>2018-10-29T06:03:19.770Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/ios_update_log.html</loc>
     
     <lastmod>2018-10-29T06:01:46.912Z</lastmod>
@@ -114,7 +114,7 @@
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/zh-cn/docs_ios/detailed.html</loc>
+    <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/detailed.html</loc>
     
     <lastmod>2018-10-29T06:00:26.158Z</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/detailed.html</loc>
+    <loc>https://doc.yaokantv.com/zh-cn/docs_ios/detailed.html</loc>
     
     <lastmod>2018-10-29T06:00:26.158Z</lastmod>
     
@@ -142,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/index.html</loc>
-    
-    <lastmod>2018-10-29T04:01:24.042Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/ios_overview.html</loc>
     
     <lastmod>2018-10-29T04:01:24.042Z</lastmod>
@@ -157,6 +150,13 @@
   
   <url>
     <loc>https://doc.yaokantv.com/zh-cn/docs_android/index.html</loc>
+    
+    <lastmod>2018-10-29T04:01:24.042Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://doc.yaokantv.com/zh-cn/ykzxsdk/index.html</loc>
     
     <lastmod>2018-10-29T04:01:24.042Z</lastmod>
     
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/news/2018/10/19/hexo-3-8-released/</loc>
+    <loc>https://doc.yaokantv.com/news/2016/02/28/hexo-3-2-released/</loc>
     
     <lastmod>2018-10-29T01:22:13.239Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://doc.yaokantv.com/news/2016/02/28/hexo-3-2-released/</loc>
+    <loc>https://doc.yaokantv.com/news/2018/10/19/hexo-3-8-released/</loc>
     
     <lastmod>2018-10-29T01:22:13.239Z</lastmod>
     

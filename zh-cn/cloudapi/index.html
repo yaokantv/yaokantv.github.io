@@ -47,7 +47,7 @@
 <meta property="og:site_name" content="Yaokantv">
 <meta property="og:description" content="Yaokan 酒店网关云 API 接口文档文件编号：YAOKANHOTELAPI-20190920版本：v1.0深圳遥看科技有限公司（版权所有，切勿拷贝）  概述   使用遥控大师用户系统开发者，可通过本文档接口管理设备授权、获取设备上创建的遥控器列表、云语音控制设备功能。  文档阅读对象   酒店系统开发者  接口规范   3.1. 请求头   名称 类型 是否必须 示例 说明     appI">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-09-27T01:48:13.168Z">
+<meta property="og:updated_time" content="2019-09-27T02:41:07.590Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yaokantv">
 <meta name="twitter:description" content="Yaokan 酒店网关云 API 接口文档文件编号：YAOKANHOTELAPI-20190920版本：v1.0深圳遥看科技有限公司（版权所有，切勿拷贝）  概述   使用遥控大师用户系统开发者，可通过本文档接口管理设备授权、获取设备上创建的遥控器列表、云语音控制设备功能。  文档阅读对象   酒店系统开发者  接口规范   3.1. 请求头   名称 类型 是否必须 示例 说明     appI">
@@ -221,7 +221,7 @@
 <td>string</td>
 <td>yes</td>
 <td>user token</td>
-<td>用户授权码</td>
+<td>用户授权码，酒店系统提供</td>
 </tr>
 <tr>
 <td>macs</td>
@@ -457,7 +457,7 @@
 </tbody>
 </table>
 <p>响应数据示例:</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[&#123;"deviceId":"deviceId1","name":"客厅空调","rcType":7,'mac':'mac1'&#125;,&#123;"deviceId":"deviceId2","name":"客厅风扇","rcType":6,'mac':'mac2'&#125;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[&#123;<span class="attr">"deviceId"</span>:<span class="string">"deviceId1"</span>,<span class="attr">"name"</span>:<span class="string">"客厅空调"</span>&#125;,&#123;<span class="attr">"deviceId"</span>:<span class="string">"deviceId2"</span>,<span class="attr">"name"</span>:<span class="string">"客厅风扇"</span>&#125;]</span><br></pre></td></tr></table></figure>
 <h3 id="4-4-语音设备控制-云语音控制" class="article-heading"><a href="#4-4-语音设备控制-云语音控制" class="headerlink" title="4.4. 语音设备控制(云语音控制)"></a>4.4. 语音设备控制(云语音控制)<a class="article-anchor" href="#4-4-语音设备控制-云语音控制" aria-hidden="true"></a></h3><p>请求参数:</p>
 <table>
 <thead>
@@ -1063,7 +1063,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-09-27T01:48:13.168Z" itemprop="dateModified">上次更新：2019-09-27</time>
+                <time class="article-footer-updated" datetime="2019-09-27T02:41:07.590Z" itemprop="dateModified">上次更新：2019-09-27</time>
                 <a href="cloud2cloud.html" class="article-footer-next" title="遥看云云对接接口文档"><span>下一篇</span><i class="fa fa-chevron-right"></i></a>
               </footer>
             </div>
